@@ -12,7 +12,7 @@ Objetivo é simular uma aplicação que gerencia cursos de graduação e pós-gr
 - [ ] Consulta de cursos
 
 ## 📐Diagrama de classes
-![Diagrama](./DiagramaClasses.png)
+![Diagrama](./assets/DiagramaClasses.png)
 
 
 ## 🛠️Tecnologias Utilizadas
