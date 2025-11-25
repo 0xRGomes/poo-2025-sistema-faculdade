@@ -1,0 +1,30 @@
+# --- Arquivos compilados do Java (Lixo) ---
+*.class
+*.log
+*.ctxt
+*.jar
+*.war
+
+# --- Pastas de build (Onde ficam os compilados) ---
+target/
+out/
+build/
+bin/
+
+# --- Configurações do IntelliJ (IDE) ---
+.idea/
+*.iml
+*.iws
+
+# --- Configurações do VS Code (IDE) ---
+.vscode/
+
+# --- Configurações do BlueJ (Se usar) ---
++libs/
+*.pkg
+package.bluej
+
+# --- Sistema Operacional ---
+.DS_Store
+Thumbs.db
+
