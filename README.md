@@ -27,11 +27,11 @@ Objetivo é simular uma aplicação que gerencia cursos de graduação e pós-gr
 
 ## 📋Backlog (Tarefas)
 
-- [ ] Cria Curso
-- [ ] Cria Curso Pós-Graduação
-- [ ] Cria método para consultar preço de Pós-Graduação
-- [X] Cria Curso Graduação
-- [X] Cria método para consultar preço de Graduação
+- [X] Criar Curso
+- [ ] Criar Curso Pós-Graduação
+- [ ] Criar método para consultar preço de Pós-Graduação
+- [X] Criar Curso Graduação
+- [X] Criar método para consultar preço de Graduação
 - [ ] Criar AplicaoFaculdade
 - [ ] Criar método para criar curso graduacao
 - [ ] Criar método para criar curso posGraduacao
