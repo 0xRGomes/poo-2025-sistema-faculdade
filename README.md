@@ -7,7 +7,7 @@ Objetivo é simular uma aplicação que gerencia cursos de graduação e pós-gr
 ## 🚀Funcionalidades
 - [ ] Cadastra curso de Graduação
 - [ ] Cadastra curso de Pós-Graduação
-- [ ] Consulta preço do curso de Graduação
+- [X] Consulta preço do curso de Graduação
 - [ ] Consulta preço do curso de Pós-Graduação
 - [ ] Consulta de cursos
 
@@ -30,8 +30,8 @@ Objetivo é simular uma aplicação que gerencia cursos de graduação e pós-gr
 - [X] Criar Curso
 - [ ] Criar Curso Pós-Graduação
 - [ ] Criar método para consultar preço de Pós-Graduação
-- [ ] Criar Curso Graduação
-- [ ] Criar método para consultar preço de Graduação
+- [X] Criar Curso Graduação
+- [X] Criar método para consultar preço de Graduação
 - [ ] Criar AplicaoFaculdade
 - [ ] Criar método para criar curso graduacao
 - [ ] Criar método para criar curso posGraduacao
