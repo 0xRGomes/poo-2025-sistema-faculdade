@@ -31,7 +31,7 @@ public class CursoPosGraduacao extends Curso{
 
     @Override
     public double consultaPreco() {
-        return taxaAddPos; 
+        return this.taxaAddPos*0.95; //preço = valor da taxa menos o desconto de 5%
     }
 
     @Override
