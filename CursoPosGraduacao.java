@@ -1,7 +1,7 @@
 public class CursoPosGraduacao extends Curso{
    
     private double cargaHorariaMax;
-    private double taxaAddPos;
+    private double taxaMatriculaPos;
 
     //contrutor
     public CursoPosGraduacao(String codigo, String nome, String area, int numVagas, double cargaHorariaMax, double taxaMatriculaPos){

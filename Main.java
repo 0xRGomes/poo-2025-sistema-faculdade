@@ -1,12 +1,11 @@
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     private static final Scanner scanner = new Scanner(System.in);
-    private static final List<Curso> cursos = new ArrayList<>();
 
     public static void main(String[] args) {
+        AplicaçãoFaculdade facul = new AplicaçãoFaculdade();
         boolean running = true;
         while (running) {
             System.out.println("\n=== Menu Principal ===");
@@ -20,11 +19,11 @@ public class Main {
             String opc = scanner.nextLine().trim();
 
             switch (opc) {
-                case "1": cadastrarGraduacao(); break;
-                case "2": cadastrarPosGraduacao(); break;
-                case "3": consultarPreco(); break;
-                case "4": consultarInformacoes(); break;
-                case "5": listarCursos(); break;
+                case "1": cadastrarGraduacao(facul); break;
+                case "2": cadastrarPosGraduacao(facul); break;
+                case "3": consultarPreco(facul); break;
+                case "4": consultarInformacoes(facul); break;
+                case "5": listarCursos(facul); break;
                 case "6": running = false; break;
                 default: System.out.println("Opção inválida.");
             }
@@ -32,10 +31,10 @@ public class Main {
         System.out.println("Finalizando. Até mais!");
     }
 
-    private static void cadastrarGraduacao() {
+    private static void cadastrarGraduacao(AplicaçãoFaculdade facul) {
         System.out.println("\n-- Cadastrar Graduação --");
         System.out.print("Código: "); String codigo = scanner.nextLine().trim();
-        if (buscarCursoPorCodigo(codigo) != null) { System.out.println("Código já existente."); return; }
+        if (buscarCursoPorCodigo(codigo, facul) != null) { System.out.println("Código já existente."); return; }
         System.out.print("Nome: "); String nome = scanner.nextLine().trim();
         System.out.print("Área: "); String area = scanner.nextLine().trim();
         int vagas = readInt("Número de vagas: ");
@@ -43,42 +42,41 @@ public class Main {
         int opt = readInt("Disciplinas optativas: ");
         double taxa = readDouble("Taxa de matrícula: ");
 
-        CursoGraduacao cg = new CursoGraduacao(codigo, nome, area, vagas, obrig, opt, taxa);
-        cursos.add(cg);
+        facul.criaCursoGraduacao(codigo, nome, area, vagas, obrig, opt, taxa);
         System.out.println("Graduação cadastrada.");
     }
 
-    private static void cadastrarPosGraduacao() {
+    private static void cadastrarPosGraduacao(AplicaçãoFaculdade facul) {
         System.out.println("\n-- Cadastrar Pós-Graduação --");
         System.out.print("Código: "); String codigo = scanner.nextLine().trim();
-        if (buscarCursoPorCodigo(codigo) != null) { System.out.println("Código já existente."); return; }
+        if (buscarCursoPorCodigo(codigo, facul) != null) { System.out.println("Código já existente."); return; }
         System.out.print("Nome: "); String nome = scanner.nextLine().trim();
         System.out.print("Área: "); String area = scanner.nextLine().trim();
         int vagas = readInt("Número de vagas: ");
         double carga = readDouble("Carga horária máxima: ");
-        double taxaAdd = readDouble("Taxa adicional: ");
+        double taxaMatriculaPos = readDouble("Taxa de Matrícula: ");
 
-        CursoPosGraduacao cp = new CursoPosGraduacao(codigo, nome, area, vagas, carga, taxaAdd);
-        cursos.add(cp);
+        facul.criaCursoPosGraduacao(codigo, nome, area, vagas, carga, taxaMatriculaPos);
         System.out.println("Pós-Graduação cadastrada.");
     }
 
-    private static void consultarPreco() {
+    private static void consultarPreco(AplicaçãoFaculdade facul) {
         System.out.print("\nCódigo do curso: "); String codigo = scanner.nextLine().trim();
-        Curso c = buscarCursoPorCodigo(codigo);
+        Curso c = buscarCursoPorCodigo(codigo, facul);
         if (c == null) { System.out.println("Curso não encontrado."); return; }
         System.out.printf("Preço/Taxa: %.2f\n", c.consultaPreco());
     }
 
-    private static void consultarInformacoes() {
+    private static void consultarInformacoes(AplicaçãoFaculdade facul) {
         System.out.print("\nCódigo do curso: "); String codigo = scanner.nextLine().trim();
-        Curso c = buscarCursoPorCodigo(codigo);
+        Curso c = buscarCursoPorCodigo(codigo, facul);
         if (c == null) { System.out.println("Curso não encontrado."); return; }
-        c.consultaInformacoes();
+        facul.consultaCurso(c);
     }
 
-    private static void listarCursos() {
+    private static void listarCursos(AplicaçãoFaculdade facul) {
         System.out.println("\n-- Cursos cadastrados --");
+        ArrayList<Curso> cursos = facul.getCursos();
         if (cursos.isEmpty()) { System.out.println("Nenhum curso."); return; }
         for (Curso c : cursos) {
             String tipo = (c instanceof CursoGraduacao) ? "Graduação" : "Pós";
@@ -86,7 +84,8 @@ public class Main {
         }
     }
 
-    private static Curso buscarCursoPorCodigo(String codigo) {
+    private static Curso buscarCursoPorCodigo(String codigo, AplicaçãoFaculdade facul) {
+        ArrayList<Curso> cursos = facul.getCursos();
         for (Curso c : cursos) if (c.getCodigo().equalsIgnoreCase(codigo)) return c;
         return null;
     }
