@@ -4,10 +4,10 @@ public class CursoPosGraduacao extends Curso{
     private double taxaAddPos;
 
     //contrutor
-    public CursoPosGraduacao(String codigo, String nome, String area, int numVagas, double cargaHorariaMax, double taxaAddPos){
+    public CursoPosGraduacao(String codigo, String nome, String area, int numVagas, double cargaHorariaMax, double taxaMatriculaPos){
         super(codigo, nome, area, numVagas);
         this.cargaHorariaMax = cargaHorariaMax;
-        this.taxaAddPos = taxaAddPos;
+        this.taxaMatriculaPos = taxaMatriculaPos;
     }
 
 //getters
@@ -15,8 +15,8 @@ public class CursoPosGraduacao extends Curso{
         return cargaHorariaMax;
     }
 
-    public double getTaxaAddPos(){
-        return taxaAddPos;
+    public double getTaxaMatriculaPos(){
+        return taxaMatriculaPos;
     }
 
 //setters
@@ -24,14 +24,14 @@ public class CursoPosGraduacao extends Curso{
         this.cargaHorariaMax = cargaHorariaMax;
     }
 
-    public void setTaxaAddPos(double taxaAddPos) {
-        this.taxaAddPos = taxaAddPos;
+    public void setTaxaMatriculaPos(double taxaMatriculaPos) {
+        this.taxaMatriculaPos = taxaMatriculaPos;
     }
 
 
     @Override
     public double consultaPreco() {
-        return this.taxaAddPos*0.95; //preço = valor da taxa menos o desconto de 5%
+        return this.taxaMatriculaPos*0.95; //preço = valor da taxa menos o desconto de 5%
     }
 
     @Override
@@ -42,6 +42,6 @@ public class CursoPosGraduacao extends Curso{
         System.out.println("Área: " + getArea());
         System.out.println("Vagas: " + getNumVagas());
         System.out.println("Carga horária máxima: " + cargaHorariaMax);
-        System.out.println("Taxa adicional: " + taxaAddPos);
+        System.out.println("Taxa adicional: " + taxaMatriculaPos);
     }
 }
