@@ -5,11 +5,11 @@ Atividade desenvolvida para a disciplina de **Programação Orientada a Objetos(
 Objetivo é simular uma aplicação que gerencia cursos de graduação e pós-graduação de uma faculdade.
 
 ## 🚀Funcionalidades
-- [ ] Cadastra curso de Graduação
-- [ ] Cadastra curso de Pós-Graduação
+- [X] Cadastra curso de Graduação
+- [X] Cadastra curso de Pós-Graduação
 - [X] Consulta preço do curso de Graduação
-- [ ] Consulta preço do curso de Pós-Graduação
-- [ ] Consulta de cursos
+- [X] Consulta preço do curso de Pós-Graduação
+- [X] Consulta de cursos
 
 ## 📐Diagrama de classes
 ![Diagrama](./assets/DiagramaClasses.png)
@@ -28,12 +28,12 @@ Objetivo é simular uma aplicação que gerencia cursos de graduação e pós-gr
 ## 📋Backlog (Tarefas)
 
 - [X] Criar Curso
-- [ ] Criar Curso Pós-Graduação
-- [ ] Criar método para consultar preço de Pós-Graduação
+- [X] Criar Curso Pós-Graduação
+- [X] Criar método para consultar preço de Pós-Graduação
 - [X] Criar Curso Graduação
 - [X] Criar método para consultar preço de Graduação
-- [ ] Criar AplicaoFaculdade
-- [ ] Criar método para criar curso graduacao
-- [ ] Criar método para criar curso posGraduacao
-- [ ] Criar método para consultar curso
-- [ ] Criar interface
+- [X] Criar AplicaoFaculdade
+- [X] Criar método para criar curso graduacao
+- [X] Criar método para criar curso posGraduacao
+- [X] Criar método para consultar curso
+- [X] Criar interface
